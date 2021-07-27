@@ -28,9 +28,8 @@ services:
       - '9229:9229'
     volumes:
       - ../:/usr/src/service
-      - /usr/src/service/node_modules
+      - ../node_modules:/usr/src/service/node_modules
     working_dir: /usr/src/service
-    command: yarn start
 
   adminer:
     image: adminer
