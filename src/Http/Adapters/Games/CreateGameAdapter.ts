@@ -3,13 +3,9 @@ import CreateGameCommand from '../../../Application/Commands/Games/CreateGameCom
 
 @injectable()
 export default class CreateGameAdapter {
-
-  public constructor() {
-  }
+  public constructor() {}
 
   public from(body: any): CreateGameCommand {
-    return new CreateGameCommand(
-      body.name
-    );
+    return new CreateGameCommand(body.name);
   }
 }

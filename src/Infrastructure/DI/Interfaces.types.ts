@@ -1,3 +1,3 @@
 export const INTERFACES = {
-    GameRepositoryInterface: Symbol.for('GameRepositoryInterface'),
-  };
+  GameRepositoryInterface: Symbol.for('GameRepositoryInterface'),
+};

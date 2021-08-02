@@ -8,9 +8,7 @@ class App {
   private app: Application;
   private publicRoutes: PublicIndex;
 
-  public constructor(
-      express: Application,
-      ) {
+  public constructor(express: Application) {
     this.app = express;
   }
 

@@ -6,15 +6,10 @@ import { INTERFACES } from '../../../Infrastructure/DI/Interfaces.types';
 
 @injectable()
 export default class CreateGameHandler {
-  public constructor(
-      @inject(INTERFACES.GameRepositoryInterface) private gameRepository: GameRepositoryInterface
-  ) {
-  }
+  public constructor(@inject(INTERFACES.GameRepositoryInterface) private gameRepository: GameRepositoryInterface) {}
 
   public async execute(command: CreateGameCommand): Promise<void> {
-    let game = new Game(
-      command.getName()
-    );
+    let game = new Game(command.getName());
 
     game = await this.gameRepository.persist(game);
   }
