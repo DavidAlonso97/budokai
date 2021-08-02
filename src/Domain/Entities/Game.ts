@@ -19,6 +19,7 @@ export default class Game {
   @Column()
   @CreateDateColumn()
   public createdAt: Date;
+  
   @Column()
   @UpdateDateColumn()
   public updatedAt: Date;
