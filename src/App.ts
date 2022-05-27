@@ -1,4 +1,4 @@
-import { Application } from 'express';
+import { Application, json } from 'express';
 import dotenv from 'dotenv';
 import DatabaseConnection from './Infrastructure/Persistence/DatabaseConnection';
 import PublicIndex from './routes/PublicRoutes/Index';
@@ -18,6 +18,7 @@ class App {
     if (result.error) {
       throw new Error(`Environment variables not configured, aborting`);
     }
+    this.app.use(json());
     this.publicRoutes = DIContainer.resolve<PublicIndex>(PublicIndex);
 
     await this.setDatabaseConnection();
@@ -34,7 +35,7 @@ class App {
   }
 
   private setPublicRoutes() {
-    this.app.use('/public', this.publicRoutes.getRoutes());
+    this.app.use('/', this.publicRoutes.getRoutes());
   }
 }
 

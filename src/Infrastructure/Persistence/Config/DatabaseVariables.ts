@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 export default {
   host: process.env.TYPEORM_CONFIG_HOST || 'mysql',
   port: process.env.TYPEORM_CONFIG_PORT || '3306',

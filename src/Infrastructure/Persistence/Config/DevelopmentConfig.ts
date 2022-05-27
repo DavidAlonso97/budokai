@@ -13,7 +13,7 @@ export default {
   migrations: ['src/Infrastructure/Persistence/Migrations/**/*.ts'],
   migrationsTableName: DatabaseVariables.migrations,
   migrationsRun: true,
-  entities: ['src/Domain/Entities/**/*.ts'],
+  entities: ['src/Domain/Entities/**/*.js'],
   cli: {
     migrationsDir: 'src/Infrastructure/Persistence/Migrations',
     entitiesDir: 'src/Domain/Entities',
